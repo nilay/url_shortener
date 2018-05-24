@@ -1,24 +1,26 @@
-# README
+# URL Shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small Ruby on Rails application to shorten the url
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.3.1
 
-* System dependencies
 
-* Configuration
+### Get shortended url
+```
+POST /
+param: url
+response (in text format): shortended url
+```
 
-* Database creation
 
-* Database initialization
+### use shortended url to redirect to original url
+```
+GET <shortended url>`
+it will redirect to original url
+```
 
-* How to run the test suite
+## Run Unit Test
+`$ rspec`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
