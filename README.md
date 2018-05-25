@@ -11,7 +11,7 @@ Things you may want to cover:
 ```
 POST /
 param: url
-response (in text format): shortended url
+response: shortended url
 ```
 
 
@@ -24,3 +24,13 @@ it will redirect to original url
 ## Run Unit Test
 `$ rspec`
 
+
+## Rubocop
+```shell
+MacBook-Pro:url_shortener nilayanand$ rubocop
+Inspecting 37 files
+.....................................
+
+37 files inspected, no offenses detected
+
+```
