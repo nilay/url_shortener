@@ -1,0 +1,6 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'spec/rails_helper.rb'
+    - 'bin/*'
+    - 'config/spring.rb'

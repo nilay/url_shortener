@@ -1,5 +1,5 @@
+# active record model class for urls table
 class Url < ApplicationRecord
-
   before_create :set_slug
   validates :url, presence: true
 
