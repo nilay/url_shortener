@@ -1,3 +1,3 @@
-# landing helper
+# landings helper
 module LandingHelper
 end

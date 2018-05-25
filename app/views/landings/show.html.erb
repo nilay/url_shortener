@@ -1,0 +1,10 @@
+<center>
+
+  <%= form_tag url_shortener_path do %>
+      <%= text_field_tag :url, nil, class: 'shorten-input', placeholder: 'paste link to shorten it'%>
+      <%= submit_tag "Shorten" %>
+  <% end %>
+  <% if flash[:notice] %>
+      <div class="alert alert-danger" role="alert"> <strong> <%= flash[:notice]%> </strong></div>
+  <% end %>
+</center>

@@ -3,22 +3,19 @@ class LandingsController < ApplicationController
   # GET '/wew44r'
   def show
     shortener = Url.find_by(slug: params[:id])
-    if shortener.nil?
-      render text: 'Invalid entry'
-    else
-      redirect_to shortener.url
-    end
+    # redirect if root called with shortener slug
+    redirect_to shortener.url unless shortener.nil?
   end
 
   # POST '/'
   # Params: url string
   def create
-    url = Url.where(url: params[:url]).first_or_create
-    if url.valid?
-      render text: "#{http_host}/#{url.slug}"
-    else
-      render text: 'Error: ' + url.errors.full_messages.join(', ')
+    @url = Url.where(url: params[:url]).first_or_create
+    unless @url.valid?
+      flash[:notice] = @url.errors.full_messages.join(', ')
+      redirect_to root_path
     end
+    @shortended_url = "#{http_host}/#{@url.slug}"
   end
 
   private
